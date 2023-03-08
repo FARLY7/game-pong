@@ -6,7 +6,6 @@ public class PlayerPaddle : Paddle
 {
 	public KeyCode upKey;
 	public KeyCode downKey;
-	//public float moveSpeed;
 
 	private bool upKeyPressed = false;
 	private bool downKeyPressed = false;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -18,20 +19,24 @@ public class GameManager : MonoBehaviour
 	void Start()
     {
         print("GAME START");
+
+        if(GameMode.enableComputerPaddle) {
+            player2Paddle.GetComponent<ComputerPaddle>().enabled = true;
+            player2Paddle.GetComponent<PlayerPaddle>().enabled = false;
+		} else {
+			player2Paddle.GetComponent<ComputerPaddle>().enabled = false;
+			player2Paddle.GetComponent<PlayerPaddle>().enabled = true;
+		}
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(_player1Score == 10)
-        {
-            print("Player 1 wins!");
-        }
-        else if(_player2Score == 10)
-        {
-            print("Player 2 wins!");
-        }
-    }
+		if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape))
+		{
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+		}
+	}
 
     public void Player1Score()
     {

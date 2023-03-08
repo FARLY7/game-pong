@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     public float initialXSpeed = 35f;
     public float initialYSpeed = 10f;
 
-    private Rigidbody2D _rb2d;
+    public Rigidbody2D _rb2d;
 
 	private void Awake()
 	{
@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
     {
         float randX = Random.value < 0.5f ? -1f : 1f;
         float randY = Random.value < 0.5f ? -1f : 1f;
-        _rb2d.AddForce(new Vector2(this.initialXSpeed * randX, this.initialYSpeed * randY)); 
+        _rb2d.AddForce(new Vector2(this.initialXSpeed * randX, 0)); 
     }
 
 	public void AddForce(Vector2 force)

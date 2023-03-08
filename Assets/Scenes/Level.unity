@@ -268,11 +268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_Mass
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_LinearDrag
-      value: 2
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_AngularDrag
@@ -282,6 +282,18 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1351410822}
+    - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: upKey
       value: 273
@@ -296,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365080005433485260, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: bounceStrength
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
@@ -1406,12 +1418,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1351410822}
     - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: speed
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: upKey
@@ -1423,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365080005433485260, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: bounceStrength
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1833610170500862754, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
@@ -1448,11 +1464,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1655022849481848595, guid: b71eada58c5df4a91bc07de504291e7b, type: 3}
       propertyPath: initialXSpeed
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1655022849481848595, guid: b71eada58c5df4a91bc07de504291e7b, type: 3}
       propertyPath: initialYSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1655022849481848595, guid: b71eada58c5df4a91bc07de504291e7b, type: 3}
       propertyPath: initialBallXForce
