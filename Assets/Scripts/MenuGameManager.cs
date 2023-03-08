@@ -8,15 +8,6 @@ public class MenuGameManager : MonoBehaviour
     public Paddle player1Paddle;
     public Paddle player2Paddle;
 
-	void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-	}
-
     public void ResetRound()
     {
 		this.player1Paddle.ResetPosition();

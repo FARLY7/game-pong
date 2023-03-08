@@ -5,19 +5,15 @@ using UnityEngine;
 public class ComputerPaddle : Paddle
 {
 	public Rigidbody2D ball;
-
-
 	private SpriteRenderer spriteRenderer;
-
-	private float nextMove = 0.0f;
-	private float moveRate = 0.01f;
+	public float lerpSpeed = 1f;
 
 	private void Awake()
 	{
 		this._rb2d = this.GetComponent<Rigidbody2D>();
 		this.spriteRenderer = GetComponent<SpriteRenderer>();
 	}
-
+	
 	private void FixedUpdate()
 	{
 		// calculate the direction from the ball to the paddle using the position of each object
@@ -29,37 +25,30 @@ public class ComputerPaddle : Paddle
 
 		if (dotProduct > 0) {
 
-			//if (Time.time > nextMove) {
-
-				//float halfHeight = this.spriteRenderer.bounds.size.y / 2;
-
-				//if ((this.ball.position.y <= this.transform.position.y + halfHeight) &&
-				//	(this.ball.position.y >= this.transform.position.y - halfHeight))
-				//{
-				if (this.ball.position.y > this.transform.position.y) {
-					this._rb2d.AddForce(Vector2.up * this.speed);
-				} else if (this.ball.position.y < this.transform.position.y) {
-					this._rb2d.AddForce(Vector2.down * this.speed);
-				}
-
-				//nextMove = Time.time + moveRate;
-				//}
+			//if (ball.transform.position.y > transform.position.y + 0.4) {
+			//	if (this._rb2d.velocity.y < 0) this._rb2d.velocity = Vector2.zero;
+			//	this._rb2d.velocity = Vector2.Lerp(this._rb2d.velocity, Vector2.up * speed, lerpSpeed * Time.deltaTime);
+			//} else if (ball.transform.position.y < transform.position.y - 0.4) {
+			//	if (this._rb2d.velocity.y > 0) this._rb2d.velocity = Vector2.zero;
+			//	this._rb2d.velocity = Vector2.Lerp(this._rb2d.velocity, Vector2.down * speed, lerpSpeed * Time.deltaTime);
+			//} else {
+			//	this._rb2d.velocity = Vector2.Lerp(this._rb2d.velocity, Vector2.zero * speed, lerpSpeed * Time.deltaTime);
 			//}
 
 			/* Ball is moving towards the paddle,
-			 * move towards the ball */
-			//if (this.ball.position.y > this.transform.position.y) {
-			//	this._rb2d.AddForce(Vector2.up * this.speed);
-			//} else if (this.ball.position.y < this.transform.position.y) {
-			//	this._rb2d.AddForce(Vector2.down * this.speed);
-			//}
+				* move towards the ball */
+			if (this.ball.position.y > this.transform.position.y + 0.5) {
+				this._rb2d.AddForce(Vector2.up * this.speed);
+			} else if (this.ball.position.y < this.transform.position.y - 0.5) {
+				this._rb2d.AddForce(Vector2.down * this.speed);
+			}
 
 		} else {
 			/* Ball is moving away from the paddle,
-			 * move towards center of screen */
-			if (this.transform.position.y > 0.0f) {
+				* move towards center of screen */
+			if (this.transform.position.y > 1f) {
 				this._rb2d.AddForce(Vector2.down * this.speed);
-			} else if (this.transform.position.y < 0.0f) {
+			} else if (this.transform.position.y < -1f) {
 				this._rb2d.AddForce(Vector2.up * this.speed);
 			}
 		}

@@ -2259,11 +2259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_Mass
-      value: 0.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_LinearDrag
-      value: 7.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_AngularDrag
@@ -2273,6 +2273,10 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 2008448761}
+    - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: speed
       value: 30
@@ -2426,11 +2430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_Mass
-      value: 0.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_LinearDrag
-      value: 7.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2675348185973835697, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: m_AngularDrag
@@ -2440,6 +2444,10 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 2008448761}
+    - target: {fileID: 3578123509838096063, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3731234287203835242, guid: 5d714f78003694aff8e8821196e2deaa, type: 3}
       propertyPath: speed
       value: 30

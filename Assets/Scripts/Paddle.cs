@@ -82,10 +82,6 @@ public class Paddle : MonoBehaviour
 
 	public void ResetPosition()
 	{
-		//_rb2d.position.y = Vector2.zero;
-		//Vector2 position = this.transform.position;
-		//this.transform.position = position;
-
 		Vector2 position = _rb2d.position;
 		position.y = 0;
 		_rb2d.position = position;
