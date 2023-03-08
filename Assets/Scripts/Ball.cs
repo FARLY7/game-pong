@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
     {
         float randX = Random.value < 0.5f ? -1f : 1f;
         float randY = Random.value < 0.5f ? -1f : 1f;
-        _rb2d.AddForce(new Vector2(this.initialXSpeed * randX, 0)); 
+        _rb2d.AddForce(new Vector2(this.initialXSpeed * randX, this.initialYSpeed * randY)); 
     }
 
 	public void AddForce(Vector2 force)

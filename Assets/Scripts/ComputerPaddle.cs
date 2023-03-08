@@ -10,7 +10,7 @@ public class ComputerPaddle : Paddle
 	private SpriteRenderer spriteRenderer;
 
 	private float nextMove = 0.0f;
-	private float moveRate = 0.05f;
+	private float moveRate = 0.01f;
 
 	private void Awake()
 	{
@@ -29,7 +29,7 @@ public class ComputerPaddle : Paddle
 
 		if (dotProduct > 0) {
 
-			if (Time.time > nextMove) {
+			//if (Time.time > nextMove) {
 
 				//float halfHeight = this.spriteRenderer.bounds.size.y / 2;
 
@@ -42,9 +42,9 @@ public class ComputerPaddle : Paddle
 					this._rb2d.AddForce(Vector2.down * this.speed);
 				}
 
-				nextMove = Time.time + moveRate;
+				//nextMove = Time.time + moveRate;
 				//}
-			}
+			//}
 
 			/* Ball is moving towards the paddle,
 			 * move towards the ball */
