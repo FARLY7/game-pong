@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Single player
+  m_text: Single Player
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b11d250cdf214594b847555f4e0eaed, type: 2}
   m_sharedMaterial: {fileID: -6158631038957176514, guid: 0b11d250cdf214594b847555f4e0eaed, type: 2}
@@ -2356,7 +2356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb828c31275c643e3b4061baca02c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singlePlayerButton: {fileID: 0}
 --- !u!1001 &1529395522
 PrefabInstance:
   m_ObjectHideFlags: 0
