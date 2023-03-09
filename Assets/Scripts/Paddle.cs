@@ -31,14 +31,14 @@ public class Paddle : MonoBehaviour
 			
 			if (normal.x == 1) {
 				/* Player 1 */
-				normal = Quaternion.AngleAxis(65 * ratio * -1, Vector3.forward) * normal;
+				normal = Quaternion.AngleAxis(90 * ratio * -1, Vector3.forward) * normal;
 				//ball.transform.rotation = Quaternion.AngleAxis(90 * ratio * -1, Vector3.forward);
 				//ball._rb2d.velocity = ball._rb2d.velocity * -1;
 				//vel.y = ratio * -4;
 
 			} else if (normal.x == -1) {
 				/* Player 2 */
-				normal = Quaternion.AngleAxis(65 * ratio, Vector3.forward) * normal;
+				normal = Quaternion.AngleAxis(90 * ratio, Vector3.forward) * normal;
 				//ball.transform.rotation = Quaternion.AngleAxis(90 * ratio, Vector3.forward);
 				//normal = Quaternion.AngleAxis(90 * ratio * -1, Vector3.forward) * normal;
 				//vel.y = ratio * -4;
