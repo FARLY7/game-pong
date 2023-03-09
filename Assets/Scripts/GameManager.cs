@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
 
 	void Start()
     {
-        print("GAME START");
-
         if(GameMode.enableComputerPaddle) {
             player2Paddle.GetComponent<ComputerPaddle>().enabled = true;
             player2Paddle.GetComponent<PlayerPaddle>().enabled = false;
@@ -29,7 +27,6 @@ public class GameManager : MonoBehaviour
 		}
     }
 
-    // Update is called once per frame
     void Update()
     {
 		if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape))

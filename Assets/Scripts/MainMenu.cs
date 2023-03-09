@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button singlePlayerButton;
-
     public void PlaySinglePlayerGame()
     {
         GameMode.enableComputerPaddle = true;
@@ -19,18 +17,8 @@ public class MainMenu : MonoBehaviour
 	}
 
 	public void QuitGame()
-    {
-        UnityEngine.Debug.Log("Quit");
-        Application.Quit();
-    }
-
-    public void OptionsMenu()
-    {
-
-    }
-
-    void Start()
-    {
-        //singlePlayerButton.Select();
-    }
+	{
+		UnityEngine.Debug.Log("Quit");
+		Application.Quit();
+	}
 }

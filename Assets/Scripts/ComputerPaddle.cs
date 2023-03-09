@@ -5,14 +5,7 @@ using UnityEngine;
 public class ComputerPaddle : Paddle
 {
 	public Rigidbody2D ball;
-	private SpriteRenderer spriteRenderer;
-	public float lerpSpeed = 1f;
-
-	private void Awake()
-	{
-		this._rb2d = this.GetComponent<Rigidbody2D>();
-		this.spriteRenderer = GetComponent<SpriteRenderer>();
-	}
+	//public float lerpSpeed = 1f;
 	
 	private void FixedUpdate()
 	{
@@ -38,18 +31,18 @@ public class ComputerPaddle : Paddle
 			/* Ball is moving towards the paddle,
 				* move towards the ball */
 			if (this.ball.position.y > this.transform.position.y + 0.5) {
-				this._rb2d.AddForce(Vector2.up * this.speed);
+				_rb2d.AddForce(Vector2.up * this.speed);
 			} else if (this.ball.position.y < this.transform.position.y - 0.5) {
-				this._rb2d.AddForce(Vector2.down * this.speed);
+				_rb2d.AddForce(Vector2.down * this.speed);
 			}
 
 		} else {
 			/* Ball is moving away from the paddle,
 				* move towards center of screen */
 			if (this.transform.position.y > 1f) {
-				this._rb2d.AddForce(Vector2.down * this.speed);
+				_rb2d.AddForce(Vector2.down * this.speed);
 			} else if (this.transform.position.y < -1f) {
-				this._rb2d.AddForce(Vector2.up * this.speed);
+				_rb2d.AddForce(Vector2.up * this.speed);
 			}
 		}
 	}
