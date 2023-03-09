@@ -61,9 +61,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           path: build
-      - run: ls -R
       - uses: softprops/action-gh-release@v1
         with:    
           fail_on_unmatched_files: true
           files: |
-            build/*.zip
+            build/**/*.zip
