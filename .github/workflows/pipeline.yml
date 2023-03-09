@@ -48,8 +48,7 @@ jobs:
       - name: zip package
         run: |
           sudo mv build/${{ matrix.targetPlatform }} build/pong-${{ matrix.BUILD_NAME }}
-          cd build; zip -r ../pong-${{ matrix.BUILD_NAME }}.zip * -x pong-${{ matrix.BUILD_NAME }}/*_BurstDebugInformation_DoNotShip/\*
-        # run: zip -r pong-${{ matrix.BUILD_NAME }}.zip build/${{ matrix.targetPlatform }}/* 
+          cd build; zip -r ../pong-${{ matrix.BUILD_NAME }}.zip pong-${{ matrix.BUILD_NAME }} -x pong-${{ matrix.BUILD_NAME }}/*_BurstDebugInformation_DoNotShip/\*
       - uses: actions/upload-artifact@v3
         with:
           name: pong-${{ matrix.BUILD_NAME }}-asset
