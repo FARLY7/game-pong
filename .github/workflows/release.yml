@@ -19,7 +19,14 @@ jobs:
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
           # - WebGL # WebGL.
-
+        include:
+        - targetPlatform: StandaloneOSX
+          BUILD_NAME: macos
+        - targetPlatform: StandaloneWindows64
+          BUILD_NAME: win
+        - targetPlatform: StandaloneLinux64
+          BUILD_NAME: linux
+        
     steps:
       - uses: actions/checkout@v3
         with:
@@ -37,10 +44,10 @@ jobs:
           # UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-          buildName: pong
+          buildName: pong-${{ matrix.BUILD_NAME }}
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
+          name: pong-${{ matrix.BUILD_NAME }}
           path: build/${{ matrix.targetPlatform }}
 
   release:
