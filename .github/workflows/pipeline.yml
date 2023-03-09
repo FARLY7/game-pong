@@ -1,4 +1,4 @@
-name: release
+name: pipeline
 
 on:
   push:
@@ -19,7 +19,14 @@ jobs:
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
           # - WebGL # WebGL.
-
+        include:
+        - targetPlatform: StandaloneOSX
+          BUILD_NAME: macos
+        - targetPlatform: StandaloneWindows64
+          BUILD_NAME: win
+        - targetPlatform: StandaloneLinux64
+          BUILD_NAME: linux
+        
     steps:
       - uses: actions/checkout@v3
         with:
@@ -38,10 +45,14 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: pong
+      - name: zip package
+        run: |
+          sudo mv build/${{ matrix.targetPlatform }} build/pong-${{ matrix.BUILD_NAME }}
+          cd build; zip -r ../pong-${{ matrix.BUILD_NAME }}.zip pong-${{ matrix.BUILD_NAME }} -x pong-${{ matrix.BUILD_NAME }}/*_BurstDebugInformation_DoNotShip/\*
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: pong-${{ matrix.BUILD_NAME }}-asset
+          path: pong-${{ matrix.BUILD_NAME }}.zip
 
   release:
     needs: [build]
@@ -52,9 +63,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           path: build
-
       - uses: softprops/action-gh-release@v1
         with:    
           fail_on_unmatched_files: true
           files: |
-            build/**
+            build/**/*.zip
