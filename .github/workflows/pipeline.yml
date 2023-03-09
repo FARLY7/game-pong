@@ -1,4 +1,4 @@
-name: release
+name: pipeline
 
 on:
   push:
@@ -45,10 +45,12 @@ jobs:
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: pong-${{ matrix.BUILD_NAME }}
+      - name: zip package
+        run: zip -r pong-${{ matrix.BUILD_NAME }}.zip build/${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v3
         with:
           name: pong-${{ matrix.BUILD_NAME }}
-          path: build/
+          path: pong-${{ matrix.BUILD_NAME }}.zip
 
   release:
     needs: [build]
@@ -64,6 +66,4 @@ jobs:
         with:    
           fail_on_unmatched_files: true
           files: |
-            build/pong-win.zip
-            build/pong-linux.zip
-            build/pong-macos.zip
+            build/*.zip
