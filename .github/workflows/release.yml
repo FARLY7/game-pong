@@ -48,7 +48,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: pong-${{ matrix.BUILD_NAME }}
-          path: build/${{ matrix.targetPlatform }}
+          path: build/
 
   release:
     needs: [build]
@@ -59,9 +59,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           path: build
-
+      - run: ls -R
       - uses: softprops/action-gh-release@v1
         with:    
           fail_on_unmatched_files: true
           files: |
-            build/**
+            build/pong-win.zip
+            build/pong-linux.zip
+            build/pong-macos.zip
