@@ -46,7 +46,8 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
           buildName: pong-${{ matrix.BUILD_NAME }}
       - name: zip package
-        run: zip -r pong-${{ matrix.BUILD_NAME }}.zip build/${{ matrix.targetPlatform }}
+        run: cd build/${{ matrix.targetPlatform }}; zip -r ../../pong-${{ matrix.BUILD_NAME }}.zip * -x *_BurstDebugInformation_DoNotShip/\*
+        # run: zip -r pong-${{ matrix.BUILD_NAME }}.zip build/${{ matrix.targetPlatform }}/* 
       - uses: actions/upload-artifact@v3
         with:
           name: pong-${{ matrix.BUILD_NAME }}
