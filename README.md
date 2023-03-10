@@ -16,8 +16,8 @@ Standalone applications for Windows, Mac, and Linux can be found in the [Release
 - Computer "AI" in single player mode.
 - Scoreboard.
 - Pong audio played when ball collides with the paddle.
+- Ability to influence the direction of the ball depending on where it hits the paddle. The closer the ball hits the center of the paddle, the more it will leave in a direction perpendicular to the paddle's surface. If the ball hits closer to the edge of the paddle, it will leave the paddle at a more aggressive angle in the direction of the side struck.
 - The speed of the ball increases with every surface it collides with.
-- Ability to influence the direction of the ball depending on where it hits the paddle. The further toward the end of the paddle the ball hits, the more aggressive of an angle the ball will leave the paddle.
 - Live computer vs computer background game during menu screen.
 
 ## Controls
